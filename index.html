@@ -155,7 +155,7 @@ color: rgba(255, 255, 0, 0.8);
 <BR>
 
 <font size="3">
-  <div class="box links">
+  <div class="box links" align="center">
     <p><A href="http://math.ustc.edu.cn/">USTC Math</A>, | 
   <A
 href="http://citeseer.ist.psu.edu/">CiteSeer</A> 
@@ -185,7 +185,29 @@ href="http://www.ams.org/mathscinet/">MathSciNet</A> |
 </font>
   	 
 	 
-	 
+//Html代码
+<div class="xm">
+      <img src="/Content/Images/xiaomai.png" />
+  </div>
+//CSS代码
+<style>
+      .xm{
+          position:fixed;
+          bottom:0;
+          left:0;
+          z-index:1;
+          font-size:0;
+          transition:all .3s ease-in-out;          
+          transform:translateY(3px);          
+      }
+      .xm:hover{
+          -webkit-transform:translateY(0);
+          -ms-transform:translateY(0);
+      }
+      .xm img{
+          width:50px;
+      }
+  </style>	 
 
 	 
 
