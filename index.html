@@ -140,19 +140,18 @@ Technology, <br>
 
 
 <script>
-        // 使用免费计数API（无需注册）
-        const counterKey = 'academic_page_zhangsan'; // 修改为你的唯一标识
-        
-        // 获取并更新计数
-        fetch(`https://api.countapi.xyz/hit/${counterKey}`)
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('visits').textContent = data.value
-            })
-            .catch(() => {
-                document.getElementById('visits').textContent = '统计不可用'
-            })
+// 初始化计数器（如果不存在则创建）
+fetch('https://api.countapi.xyz/create?namespace=mywebsite&key=homepage&value=0')
+  .then(() => {
+    // 每次访问递增计数
+    fetch('https://api.countapi.xyz/hit/mywebsite/homepage')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('counter').textContent = data.value;
+      });
+  });
 </script>
+<p>访问次数: <span id="counter">0</span></p>
 
 
 <p ><font size="4">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </font> </p>
