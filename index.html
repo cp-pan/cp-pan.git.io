@@ -139,19 +139,6 @@ Technology, <br>
 </section>
 
 
-<script>
-// 初始化计数器（如果不存在则创建）
-fetch('https://api.countapi.xyz/create?namespace=mywebsite&key=homepage&value=0')
-  .then(() => {
-    // 每次访问递增计数
-    fetch('https://api.countapi.xyz/hit/mywebsite/homepage')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('counter').textContent = data.value;
-      });
-  });
-</script>
-<p>访问次数: <span id="counter">0</span></p>
 
 
 
