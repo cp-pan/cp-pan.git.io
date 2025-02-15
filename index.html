@@ -139,7 +139,20 @@ Technology, <br>
 </section>
 
 
-
+<script>
+        // 使用免费计数API（无需注册）
+        const counterKey = 'academic_page_zhangsan'; // 修改为你的唯一标识
+        
+        // 获取并更新计数
+        fetch(`https://api.countapi.xyz/hit/${counterKey}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('visits').textContent = data.value
+            })
+            .catch(() => {
+                document.getElementById('visits').textContent = '统计不可用'
+            })
+</script>
 
 
 <p ><font size="4">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </font> </p>
